@@ -35,9 +35,9 @@ export async function saveFcmToken(user) {
     const permission = await Notification.requestPermission();
     if (permission !== "granted") return;
 
-    // Get the FCM token — uses the firebase-messaging-sw.js service worker
+    // Get the FCM token â uses the firebase-messaging-sw.js service worker
     const token = await getToken(messaging, {
-      vapidKey: window.__REKINDLE_VAPID_KEY__ || ""
+      vapidKey: "BAmxauBlg8q-GtGufaFSfqwj1yISYb-DTeSya5Eq4YQyMImabEiU-tQk7P6o4GX1_Dx4hndo279AAaRdNphrAn8"
     });
     if (!token) return;
 
@@ -50,7 +50,7 @@ export async function saveFcmToken(user) {
       updatedAt: new Date().toISOString()
     });
   } catch (e) {
-    // Silently fail — FCM is a nice-to-have, app works without it
+    // Silently fail â FCM is a nice-to-have, app works without it
     console.log("FCM token save skipped:", e.message);
   }
 }
