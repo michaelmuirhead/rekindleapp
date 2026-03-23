@@ -1,35 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="64" height="64">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#42A5F5"/>
-      <stop offset="100%" stop-color="#1565C0"/>
+      <stop offset="0%" stop-color="#1E82E6"/>
+      <stop offset="100%" stop-color="#31B3FE"/>
     </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="52%" r="38%">
-      <stop offset="0%" stop-color="#FFEB3B" stop-opacity="0.55"/>
-      <stop offset="50%" stop-color="#42A5F5" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#1565C0" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="flame" x1="0.5" y1="0" x2="0.5" y2="1">
-      <stop offset="0%" stop-color="#FFEE58"/>
-      <stop offset="30%" stop-color="#FFD54F"/>
-      <stop offset="60%" stop-color="#FFB300"/>
-      <stop offset="100%" stop-color="#F57C00"/>
+    <linearGradient id="outerFlame" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#E84D1A"/>
+      <stop offset="30%" stop-color="#F07020"/>
+      <stop offset="60%" stop-color="#F5A623"/>
+      <stop offset="100%" stop-color="#FDD835"/>
     </linearGradient>
-    <filter id="fg">
-      <feGaussianBlur stdDeviation="6" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+    <linearGradient id="innerFlame" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#F5A623"/>
+      <stop offset="50%" stop-color="#FDD835"/>
+      <stop offset="100%" stop-color="#FFF9C4"/>
+    </linearGradient>
   </defs>
-  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
-  <circle cx="256" cy="285" r="195" fill="url(#glow)"/>
-  <g transform="translate(256,278)" filter="url(#fg)">
-    <!-- Main flame -->
-    <path d="M0-180 C12-155 75-70 82,0 C88,55 62,118 30,150 C15,165 0,175 0,175 C0,175 -15,165 -30,150 C-62,118 -88,55 -82,0 C-75,-70 -12,-155 0,-180Z" fill="url(#flame)"/>
-    <!-- Right swoosh curve -->
-    <path d="M8,130 C40,95 55,40 48,-15 C44,-45 30,-80 18,-110 C28,-70 38,-30 35,15 C32,55 20,95 8,130Z" fill="#C87A15" opacity="0.45"/>
-    <!-- Left swoosh curve -->
-    <path d="M-8,130 C-40,95 -55,40 -48,-15 C-44,-45 -30,-80 -18,-110 C-28,-70 -38,-30 -35,15 C-32,55 -20,95 -8,130Z" fill="#C87A15" opacity="0.45"/>
-    <!-- Inner bright teardrop -->
-    <path d="M0-75 C6-60 38,-15 40,20 C42,50 28,82 14,100 C7,108 0,114 0,114 C0,114 -7,108 -14,100 C-28,82 -42,50 -40,20 C-38,-15 -6,-60 0,-75Z" fill="#FFD54F" opacity="0.55"/>
-  </g>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <path d="M256 72 C256 72, 210 140, 200 190 C188 248, 172 270, 168 300 C160 352, 180 400, 220 424 C240 436, 256 440, 256 440 C256 440, 272 436, 292 424 C332 400, 352 352, 344 300 C340 270, 324 248, 312 190 C302 140, 256 72, 256 72Z" fill="url(#outerFlame)"/>
+  <path d="M256 210 C256 210, 236 260, 232 290 C226 330, 236 370, 256 386 C276 370, 286 330, 280 290 C276 260, 256 210, 256 210Z" fill="url(#innerFlame)"/>
 </svg>
